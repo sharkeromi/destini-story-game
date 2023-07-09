@@ -1,5 +1,4 @@
 import 'package:destini/constants/consts.dart';
-import 'package:destini/constants/style.dart';
 import 'package:destini/controller/story_brain.dart';
 import 'package:destini/widgets/TextWidget.dart';
 import 'package:destini/widgets/customButton.dart';
@@ -13,10 +12,11 @@ class StoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("assets/background.png"))),
-        padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
-        constraints: BoxConstraints.expand(),
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/background.png"), fit: BoxFit.cover)),
+        padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
+        constraints: const BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

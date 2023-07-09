@@ -1,11 +1,23 @@
 import 'package:destini/controller/getxDependency.dart';
 import 'package:destini/screens/splashScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 //TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
-void main() => runApp(Destini());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+    statusBarBrightness: Brightness.dark,
+  ));
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(Destini());
+  });
+}
 
 class Destini extends StatelessWidget {
   Widget build(BuildContext context) {
